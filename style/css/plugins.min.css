@@ -1,0 +1,1 @@
+.toggler{background:#EFEFEF;transition:1s background;border:1px solid grey;width:64px;height:32px}.toggler .switch{width:32px;height:32px;background:#666;transition:1s margin-left;margin-left:0}.toggler.checked{background:green}.toggler.checked .switch{margin-left:32px}
