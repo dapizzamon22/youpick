@@ -102,6 +102,9 @@ input[type='range'] {
     position: fixed;
     width: 200px;
     animation: fallingLeaves 3s linear;
+    &.infinite{
+      animation: fallingLeaves 3s infinite linear;
+    }
   }
 }
 @-webkit-keyframes fallingLeaves {

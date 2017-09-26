@@ -52,27 +52,37 @@ function convertRange(input) {
 
 var gravity = 25;
 
-var Food = function(svg, x, y, angle, angularVelocity) {
+var Food = function(svg, x, y, angle, infinite = false) {
   var elem = $("<object type=\"image/svg+xml\" data=\"" + svg + "\" class=\"food\">FOOD!</object>");
   elem.css({
     'left': x + "px",
     'top': y + "px",
-    'transform': 'rotate('+ angle +'deg)'
+    'transform': 'rotate(' + angle + 'deg)'
   });
+  if (infinite == true) {
+    elem.addClass("infinite");
+  }
   $('.foodFall').append(elem);
 
 }
 $(document).ready(function() {
-  setTimeout(function(){
-    if ($('.foodFall').length > 0) {
-      var cheese = new Food("img/CheeseWheel.svg", -50, -375, 90, 15);
-      var cheese = new Food("img/Ciabatta.svg", 50, -300, 90, 15);
-      var cheese = new Food("img/Huevo.svg", -75, -250, 90, 15);
-      var cheese = new Food("img/RibEye.svg", 75, -450, 90, 15);
-      var cheese = new Food("img/Wieners.svg", 0, -250, 90, 15);
-      var cheese = new Food("img/FrenchBread.svg", 0, -275, 90, 15);
+  if ($('.foodFall').length > 0) {
+    infinite = false;
+    if ($('.foodFall.infinite').length > 0) {
+      infinite = true;
     }
-  }, 1000);
+    setTimeout(function() {
+      if ($('.foodFall').length > 0) {
+        var cheese = new Food("img/CheeseWheel.svg", -50, -375, 90, infinite);
+        var cheese = new Food("img/Ciabatta.svg", 50, -300, 90, infinite);
+        var cheese = new Food("img/Huevo.svg", -75, -250, 90, infinite);
+        var cheese = new Food("img/RibEye.svg", 75, -450, 90, infinite);
+        var cheese = new Food("img/Wieners.svg", 0, -250, 90, infinite);
+        var cheese = new Food("img/FrenchBread.svg", 0, -275, 90, infinite);
+      }
+    }, 1000);
+  }
+
 });
 
 

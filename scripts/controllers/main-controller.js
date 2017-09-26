@@ -5,4 +5,8 @@ $(document).ready(function(){
   $('body').on("click tap", "#settings .minimize", function(){
     $('#settings').toggleClass("expanded");
   });
+  $('#start-tournament').on("click", function(){
+    window.location.href = "tournament";
+  });
+
 });
