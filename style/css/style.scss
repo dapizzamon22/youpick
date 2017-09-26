@@ -1,0 +1,14 @@
+#settings{
+  position: absolute;
+  top: 100vh;
+  transition: 1s top;
+  background: #666666;
+  border: 1px solid #333;
+  height: 100vh;
+  max-height: 100vh;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  &.expanded{
+    top: 3px;
+  }
+}

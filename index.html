@@ -6,11 +6,17 @@
   <title>YouPick | Home</title>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="scripts/model/Model.js"></script>
+  <script src="scripts/controllers/main-controller.js"></script>
+  <link rel="stylesheet" href="style/css/style.min.css">
 </head>
 
 <body>
   <h1 class="main-title">YouPick</h1>
   <p class="subtitle">For when she says: "you pick"</p>
+
+  <div class="button-pane">
+    <input type="button" value="Settings" id="settings-button" />
+  </div>
 
   <div id="settings" class="slideUp">
     <form action="#" id="settings-form">
@@ -22,8 +28,8 @@
         <option value="4">$$$$</option>
       </select></p>
       <p><label for="Number of Restuarants"># of restuarants in tournament</label><input type="slide" id="numRestaurants" min="8" max="40" default="16" /></p>
-      <p><label for="Animations"></label><input type="checkbox" id="animations" /></p>
-      <p><label for="Sounds"></label><input type="checkbox" id="sounds" /></p>
+      <p><label for="Animations">Animations: </label><input type="checkbox" id="animations" /></p>
+      <p><label for="Sounds">Sounds: </label><input type="checkbox" id="sounds" /></p>
     </form>
   </div>
 </body>
