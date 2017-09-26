@@ -95,3 +95,28 @@ input[type='range'] {
   margin: 10px auto;
 }
 /* END RANGE STYLE */
+
+/*FALLING FOOD */
+.foodFall {
+  .food{
+    position: fixed;
+    width: 200px;
+    animation: fallingLeaves 3s linear;
+  }
+}
+@-webkit-keyframes fallingLeaves {
+0% {
+opacity: 1;
+-webkit-transform: translate(0, 0px) rotateZ(0deg);
+}
+75% {
+opacity: 1;
+-webkit-transform: translate(100px, 600px) rotateZ(270deg);
+}
+100% {
+opacity: 0;
+-webkit-transform: translate(150px, 800px) rotateZ(360deg);
+}
+}
+
+/*END FALLING FOOD */
