@@ -22,14 +22,8 @@
 
   <div id="settings" class="slideUp">
     <form action="#" id="settings-form">
-      <p><label>Max Price Level: </label>
-        <select name="max-price-level" id="price-level">
-        <option value="1">$</option>
-        <option value="2">$$</option>
-        <option value="3">$$$</option>
-        <option value="4">$$$$</option>
-      </select></p>
-      <p><label for="Number of Restuarants"># of restuarants in tournament</label><input type="slide" id="numRestaurants" min="8" max="40" default="16" /></p>
+      <p><label for="Price Level">Max Price</label><input type="range" data-unit="$" data-representation="unit" id="maxPrice" min="1" max="4" default="2" /></p>
+      <p><label for="Number of Restuarants"># of restuarants in tournament</label><input type="range" data-unit="" data-representation="number" id="numRestaurants" min="8" max="40" default="16" /></p>
       <p><label for="Animations">Animations: </label><input type="checkbox" id="animations" /></p>
       <p><label for="Sounds">Sounds: </label><input type="checkbox" id="sounds" /></p>
     </form>

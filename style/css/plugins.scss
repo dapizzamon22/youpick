@@ -1,22 +1,54 @@
 /*TOGGLER STYLLES */
-.toggler{
+
+.toggler {
   background: #EFEFEF;
   transition: 1s background;
-  border: 1px solid grey;
-  width: 64px;
-  height: 32px;
-  .switch{
-  width: 32px;
-  height: 32px;
-  background: #666;
-  transition: 1s margin-left;
-  margin-left: 0;
+  border: 3px solid #333;
+  width: 67px;
+  height: 34px;
+  border-radius: 19px;
+  overflow: hidden;
+  box-shadow: INSET 0 0 10px 5px rgba(0,0,0,0.25);
+
+  .switch {
+    width: 31px;
+    height: 31px;
+    border: 2px solid black; /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#f6f8f9+0,e5ebee+50,d7dee3+51,f5f7f9+100;White+Gloss */
+    background: #f6f8f9; /* Old browsers */
+    background: -moz-linear-gradient(45deg, #f6f8f9 0%, #e5ebee 50%, #d7dee3 51%, #f5f7f9 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(45deg, #f6f8f9 0%,#e5ebee 50%,#d7dee3 51%,#f5f7f9 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(45deg, #f6f8f9 0%,#e5ebee 50%,#d7dee3 51%,#f5f7f9 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr= '#f6f8f9', endColorstr='#f5f7f9',GradientType=1 );
+    /* IE6-9 fallback on horizontal gradient */
+    transition: 500ms margin-left, 500ms transform, 500ms background;
+    margin-left: 0;
+    border-radius: 16px;
+    box-shadow: 0 0 15px 10px rgba(0,0,0,0.35);
   }
-  &.checked{
-    background: green;
-    .switch{
+
+  &.checked {
+    background: #49e32a;
+
+    .switch {
       margin-left: 32px;
+      transform: rotate(90deg);
+      /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#9dd53a+0,a1d54f+50,80c217+51,7cbc0a+100;Green+Gloss+%231 */
+      background: #9dd53a; /* Old browsers */
+      background: -moz-linear-gradient(45deg, #9dd53a 0%, #a1d54f 50%, #80c217 51%, #7cbc0a 100%); /* FF3.6-15 */
+      background: -webkit-linear-gradient(45deg, #9dd53a 0%,#a1d54f 50%,#80c217 51%,#7cbc0a 100%); /* Chrome10-25,Safari5.1-6 */
+      background: linear-gradient(45deg, #9dd53a 0%,#a1d54f 50%,#80c217 51%,#7cbc0a 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr= '#9dd53a', endColorstr='#7cbc0a',GradientType=1 );
+      /* IE6-9 fallback on horizontal gradient */
     }
   }
 }
 /* END TOGGLER STYLES*/
+
+/* RANGE STYLE */
+.rangeLabel{
+  text-align: center;
+}
+input[type='range']{
+  width: 100%;
+}
+/* END RANGE STYLE */
