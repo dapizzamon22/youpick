@@ -10,6 +10,7 @@
   <script src="scripts/plugins.js"></script>
   <link rel="stylesheet" href="style/css/style.min.css">
   <link rel="stylesheet" href="style/css/plugins.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
 <body>
@@ -20,13 +21,37 @@
     <input type="button" value="Settings" id="settings-button" />
   </div>
 
-  <div id="settings" class="slideUp">
-    <form action="#" id="settings-form">
-      <p><label for="Price Level">Max Price</label><input type="range" data-unit="$" data-representation="unit" id="maxPrice" min="1" max="4" default="2" /></p>
-      <p><label for="Number of Restuarants"># of restuarants in tournament</label><input type="range" data-unit="" data-representation="number" id="numRestaurants" min="8" max="40" default="16" /></p>
-      <p><label for="Animations">Animations: </label><input type="checkbox" id="animations" /></p>
-      <p><label for="Sounds">Sounds: </label><input type="checkbox" id="sounds" /></p>
-    </form>
+  <div id="settings" class="div-modal">
+    <div class="header">
+      <p>Settings</p>
+      <div class="minimize"><i class="fa fa-angle-double-down" aria-hidden="true"></i></div>
+    </div>
+    <div class="body">
+
+      <form action="#" id="settings-form">
+        <ul>
+          <li>
+            <p><label for="Price Level">Max Price:</label></p>
+            <p><input type="range" data-unit="$" data-representation="unit" id="maxPrice" min="1" max="4" default="2" /></p>
+          </li>
+          <li>
+            <p><label for="Number of Restuarants"># of restuarants in tournament:</label></p>
+            <p>
+              <input type="range" data-unit="" data-representation="number" id="numRestaurants" min="8" max="40" default="16" step="2" />
+            </p>
+          </li>
+          <li>
+            <p><label for="Animations">Animations: </label></p>
+            <p><input type="checkbox" id="animations" /></p>
+          </li>
+          <li>
+            <p><label for="Sounds">Sounds: </label></p>
+            <p><input type="checkbox" id="sounds" /></p>
+          </li>
+        </ul>
+
+      </form>
+    </div>
   </div>
 </body>
 

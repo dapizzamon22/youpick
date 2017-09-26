@@ -1,17 +1,93 @@
-#settings{
+#settings {
   position: absolute;
   top: 100vh;
-  transition: 1s top;
+  transition: 0.5s top;
   background: #666666;
   border: 1px solid #333;
   height: 100vh;
   max-height: 100vh;
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
-  input, select{
-  float: right;  
+  width: 95%;
+  margin: 0 auto;
+
+  label {
+    text-transform: uppercase;
+    text-shadow: 1px 1px 3px rgba(70,70,70,0.5);
   }
-  &.expanded{
+
+  ul {
+    padding: 0;
+    margin: 0;
+
+    li {
+      list-style: none;
+      border-bottom: 1px solid #444;
+    }
+  }
+
+  input,
+  select {
+    display: block;
+  }
+
+  &.expanded {
     top: 3px;
+  }
+}
+
+.div-modal {
+  .header {
+    position: relative;
+    height: 34px;
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffb76b+0,ffa73d+50,ff7c00+51,ff7f04+100;Orange+Gloss */
+    background: #ffb76b;
+    /* Old browsers */
+    background: -moz-linear-gradient(top, #ffb76b 0%, #ffa73d 50%, #ff7c00 51%, #ff7f04 100%);
+    /* FF3.6-15 */
+    background: -webkit-linear-gradient(top, #ffb76b 0%,#ffa73d 50%,#ff7c00 51%,#ff7f04 100%);
+    /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom, #ffb76b 0%,#ffa73d 50%,#ff7c00 51%,#ff7f04 100%);
+    /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr=  '#ffb76b', endColorstr='#ff7f04',GradientType=0 );
+    /* IE6-9 */
+    p {
+      font-size: 18px;
+      text-transform: uppercase;
+      font-weight: bolder;
+      text-align: center;
+      line-height: 32px;
+      color: white;
+      text-shadow: 1px 2px 5px rgba(0,0,0,0.85);
+    }
+
+    .minimize {
+      width: 32px;
+      height: 32px;
+      position: absolute;
+      right: 2px;
+      top: 1px;
+      color: white;
+      line-height: 32px;
+      font-size: 30px;
+      text-align: center;
+      border-radius: 50%;
+      /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#959595+0,0d0d0d+46,010101+50,0a0a0a+53,4e4e4e+76,383838+87,1b1b1b+100;Black+Gloss+Pipe */
+      background: #959595;
+      /* Old browsers */
+      background: -moz-linear-gradient(-45deg, #959595 0%, #0d0d0d 46%, #010101 50%, #0a0a0a 53%, #4e4e4e 76%, #383838 87%, #1b1b1b 100%);
+      /* FF3.6-15 */
+      background: -webkit-linear-gradient(-45deg, #959595 0%,#0d0d0d 46%,#010101 50%,#0a0a0a 53%,#4e4e4e 76%,#383838 87%,#1b1b1b 100%);
+      /* Chrome10-25,Safari5.1-6 */
+      background: linear-gradient(135deg, #959595 0%,#0d0d0d 46%,#010101 50%,#0a0a0a 53%,#4e4e4e 76%,#383838 87%,#1b1b1b 100%);
+      /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr= '#959595', endColorstr='#1b1b1b',GradientType=1 );
+      /* IE6-9 fallback on horizontal gradient */
+
+    }
+  }
+
+  .body {
+    margin: 10px;
   }
 }

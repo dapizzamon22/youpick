@@ -25,7 +25,9 @@ function convertRange(input){
   input.on("input", function(){
     var unit = $(this).attr("data-unit");
     var label = $(this).prev(".rangeLabel");
-    label.text("");
+    label.remove();
+    label = $("<div class='rangeLabel' />");
+    $(this).before(label);
     switch($(this).attr("data-representation")){
       case "unit":
       var string = "";
