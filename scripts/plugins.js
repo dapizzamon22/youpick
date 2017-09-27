@@ -78,16 +78,20 @@ function initFoodFall(){
     }
     setTimeout(function() {
       if ($('.foodFall').length > 0) {
-        var cheese = new Food("img/CheeseWheel.svg", -50, -375, 90, infinite);
-        var cheese = new Food("img/Ciabatta.svg", 50, -300, 90, infinite);
-        var cheese = new Food("img/Huevo.svg", -75, -250, 90, infinite);
-        var cheese = new Food("img/RibEye.svg", 75, -450, 90, infinite);
-        var cheese = new Food("img/Wieners.svg", 0, -250, 90, infinite);
-        var cheese = new Food("img/FrenchBread.svg", 0, -275, 90, infinite);
+        var cheese = new Food("img/CheeseWheel.svg", getRandomX(), getRandomY(),  90, infinite);
+        var cheese = new Food("img/Ciabatta.svg", getRandomX(), getRandomY(), 90, infinite);
+        var cheese = new Food("img/Huevo.svg", getRandomX(), getRandomY(), 90, infinite);
+        var cheese = new Food("img/RibEye.svg", getRandomX(), getRandomY(), 90, infinite);
+        var cheese = new Food("img/Wieners.svg", getRandomX(), getRandomY(), 90, infinite);
+        var cheese = new Food("img/FrenchBread.svg", getRandomX(), getRandomY(), 90, infinite);
       }
     }, 1000);
   }
 }
-
-
+function getRandomY(){
+  return Math.floor(Math.random() * -450);
+}
+function getRandomX(){
+  return Math.floor(Math.random() * $(window).width() - $(window).width() * 0.25);
+}
 /* END FALLING FOOD*/
