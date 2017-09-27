@@ -33,7 +33,9 @@ $(window).on("load", function() {
         }
       });
 
+      //Start loading screen
       $('#fragment-holder').load("fragments/loading.html", function(){
+        initFoodFall();
         var loadingMessage = ["Loading...", "Adding pepperoni's...", "Checking prices...", "taking a small potty break...", "Browsing YouTube...", "Getting distracted..."];
         loadingInterval = setInterval(function() {
           var random = Math.floor(Math.random() * (loadingMessage.length - 1));
@@ -63,7 +65,7 @@ $(window).on("load", function() {
     $.post("scripts/php/get-remote.php", {
       url: newURL
     }, function(response) {
-      
+
       response = JSON.parse(response);
       if (response.status == "INVALID_REQUEST") {
         console.log("INVALID REQUEST", newURL);

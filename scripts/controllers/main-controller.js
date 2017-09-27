@@ -16,22 +16,22 @@ $(document).ready(function() {
     $("#animations").attr("checked", false);
   }
   if (settings.sounds) {
-    $("#sound").attr("checked", true);
+    $("#sounds").attr("checked", true);
   } else {
-    $("#sound").attr("checked", false);
+    $("#sounds").attr("checked", false);
   }
-  $("#numrestaurants").val(settings.numrestaurants);
+  $("#numRestaurants").val(settings.numrestaurants);
   $("#radius").val(settings.radius);
   $("#minprice").val(settings.minprice);
-  $("#maxprice").val(settings.maxprice);
+  $("#maxPrice").val(settings.maxprice);
   $("input").on("change", function() {
     var settings = loadSettings();
     settings.animations = $("#animations").is(":checked");
-    settings.sounds = $("#sound").is(":checked");
+    settings.sounds = $("#sounds").is(":checked");
     settings.radius = $("#radius").val();
     settings.minprice = $("#minprice").val();
-    settings.maxprice = $("#maxprice").val();
-    settings.numrestaurants = $("#numrestaurants").val();
+    settings.maxprice = $("#maxPrice").val();
+    settings.numrestaurants = $("#numRestaurants").val();
     saveSettings(settings);
   });
   $("#home").on("tap click", function() {

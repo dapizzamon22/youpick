@@ -3,6 +3,10 @@ function convertInputToToggler(input) {
   var element = $("<div class='toggler'><div class='switch' /></div>");
   input.hide();
   input.before(element);
+  if (input.prop("checked") == true){
+    console.log("TRUE");
+    element.addClass("checked");
+  }
   element.on("tap click", function() {
     $(this).toggleClass("checked");
     $(this).next("input[type='checkbox']").click();
@@ -49,9 +53,7 @@ function convertRange(input) {
 /* END RANGE INPUT */
 
 /* FALLING FOOD */
-
 var gravity = 25;
-
 var Food = function(svg, x, y, angle, infinite = false) {
   var elem = $("<object type=\"image/svg+xml\" data=\"" + svg + "\" class=\"food\">FOOD!</object>");
   elem.css({
@@ -66,6 +68,9 @@ var Food = function(svg, x, y, angle, infinite = false) {
 
 }
 $(document).ready(function() {
+  initFoodFall();
+});
+function initFoodFall(){
   if ($('.foodFall').length > 0) {
     infinite = false;
     if ($('.foodFall.infinite').length > 0) {
@@ -82,8 +87,7 @@ $(document).ready(function() {
       }
     }, 1000);
   }
-
-});
+}
 
 
 /* END FALLING FOOD*/

@@ -21,5 +21,6 @@ function loadSettings() {
 }
 
 function saveSettings(settings) {
+  console.log(settings);
   localStorage.setItem("settings", JSON.stringify(settings));
 }

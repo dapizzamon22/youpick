@@ -1,15 +1,25 @@
 function loadBattles(){
   var restaurants = getRestaurantList();
+
+  //Shuffle
+  shuffleList(restaurants);
+
+  var maxRestaurants = loadSettings().numrestaurants;
+  if (restaurants.length > maxRestaurants){
+    restaurants = restaurants.slice(0, maxRestaurants);
+  }
+
+
   console.log("Restaurants: ", restaurants);
   if (restaurants.length == 1){
     displayWinner(restaurants[0]);
   }
-//Shuffle
-  shuffleList(restaurants);
+
   while (restaurants.length >= 2){
     initBattle(restaurants.pop(), restaurants.pop());
   }
 
+  setRestaurantList(restaurants);
 
 
 }
@@ -30,8 +40,30 @@ function initBattle(restaurant1, restaurant2){
 
 }
 
+/* KILL BATTLE */
+function killBattle(battleElem){
+  var nextBattle = battleElem.next(".battle");
+  battleElem.fadeOut("slow", function(){
+    $(this).remove();
+  });
+  if (nextBattle.length == 0){
+    loadBattles();
+  } else{
+    //nextBattle.fadeIn("slow");
+  }
+
+}
+
 function loadRestaurant(restaurant, elem){
   elem.find("#name").text(restaurant.name);
+  elem.find(".restaurant-tile").attr("data-restaurant", JSON.stringify(restaurant));
+  elem.find("input[type='button']").on("tap click", function(){
+    var restaurant = JSON.parse($(this).closest(".restaurant-tile").attr("data-restaurant"));
+    var list = getRestaurantList();
+    list.push(restaurant);
+    setRestaurantList(list);
+    killBattle($(this).closest(".battle"));
+  });
 }
 
 
@@ -43,3 +75,9 @@ function shuffleList(list){
         list[i - 1] = list[j];
         list[j] = x;
     }}
+
+function displayWinner(restuarant){
+  $('#fragment-holder').load("fragments/winner.html", function(){
+    $('#name').text(restuarant.name);
+  });
+}
