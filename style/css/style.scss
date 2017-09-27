@@ -164,5 +164,24 @@ input[type="button"]{
 .battle{
   width: 90%;
   margin: 0 auto;
-  
+  min-height:50vh;
+  .round-indicator{
+    text-align: center;
+  }
+  .versus{
+    display: inline-block;
+    text-align: center;
+    width: 30%;
+  }
+  #restaurant-a{
+    display: inline-block;
+    width: 30%;
+  }
+  #restaurant-b{
+    display: inline-block;
+    width: 30%;
+  }
+}
+.prototype{
+  display: none;
 }

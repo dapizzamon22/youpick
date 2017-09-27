@@ -1,4 +1,6 @@
+var round = 0;
 function loadBattles(){
+  round++;
   var restaurants = getRestaurantList();
 
   //Shuffle
@@ -31,6 +33,7 @@ function initBattle(restaurant1, restaurant2){
   var battle = $('.battle.prototype').clone();
   battle.removeClass("prototype");
   $('#battle-field').append(battle);
+  battle.find(".round-number").text(round);
   battle.find("#restaurant-a").load("fragments/restaurant.html", function(){
     loadRestaurant(restaurant1, $(this));
   });
