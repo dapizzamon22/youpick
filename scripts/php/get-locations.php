@@ -30,10 +30,16 @@ while(array_key_exists("next_page_token", $results)){
         return;
     }
     $token = $results->next_page_token;
-    $url = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?token=$token&key=$apikey";
-    sleep(2);
-    $results = curlURL($url);
-    array_merge($restaurants, $results->results);
+    $url = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=$lat,$lng&pagetoken=$token&key=$apikey";
+    sleep(4);
+    $data = curlURL($url);
+    $results = json_decode($data);
+    if ($results != null && array_key_exists("results", $results)){
+        //echo var_dump($results);
+        array_merge($restaurants, $results->results);
+    } else {
+        break;
+    }
 }
 
 echo json_encode($restaurants);
@@ -53,6 +59,12 @@ function curlURL($url){
 
     //Execute the request.
     $data = curl_exec($ch);
+    //echo "\nDATA for URL: $url\n" ;
+    if (curl_errno($ch)) {
+   print curl_error($ch);
+}
+    //echo $data;
+    //echo "\nEND DATA\n";
 
     //Close the cURL handle.
     curl_close($ch);

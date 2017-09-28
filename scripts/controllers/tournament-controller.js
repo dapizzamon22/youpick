@@ -24,25 +24,15 @@ $(window).on("load", function() {
             radius: 20000,
             maxPrice: maxPrice
           }, function(restaurants) {
-            restaurants = JSON.parse(restaurants);
             console.log(restaurants);
+            restaurants = JSON.parse(restaurants);
             setRestaurantList(restaurants);
             clearInterval(loadingInterval);
             $('#fragment-holder').load("fragments/battle.html", function() {
               loadBattles();
             });
           });
-          /*pageResult(restaurants, placesURL, null, function() {
-            setRestaurantList(restaurants);
-            clearInterval(loadingInterval);
-            $('#fragment-holder').load("fragments/battle.html", function() {
-              loadBattles();
-            });
-          });*/
-
-          console.log("results:", restaurants.results);
           setRestaurantList(restaurants.results);
-          console.log("GETTING RESTAURANTS");
         }
       });
 
@@ -53,58 +43,17 @@ $(window).on("load", function() {
         loadingInterval = setInterval(function() {
           var random = Math.floor(Math.random() * (loadingMessage.length - 1));
           var message = loadingMessage[random];
-          console.log(random);
-          console.log(message);
           $('#loading-message').fadeOut("slow", function() {
             $(this).text(message).fadeIn("slow");
           });
         }, 4000);
       })
-
     });
   });
 });
 
-function pageResult(container, url, token = null, callback) {
-  var newURL;
-  if (token !== null) {
-    console.log("TOKEN PRESENT");
-    newURL = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?pagetoken=" + token + "&key=" + developmentkey;
-  } else {
-    console.log("NO TOKEN");
-    newURL = url + "";
-  }
-  console.log(newURL);
-  $.post("scripts/php/get-remote.php", {
-    url: newURL
-  }, function(response) {
-
-    response = JSON.parse(response);
-    if (response.status == "INVALID_REQUEST") {
-      console.log("INVALID REQUEST", newURL);
-      console.log(response);
-      return;
-    }
-    console.log(response);
-    var locations = response.results;
-    for (i = 0; i < locations.length; i++) {
-      container.push(locations[i]);
-    }
-    if (response.hasOwnProperty("next_page_token")) {
-      console.log("NOT NULL!", response.next_page_token);
-      setTimeout(function() {
-        pageResult(container, url, response.next_page_token, callback);
-      }, 2000);
-    } else {
-      callback();
-    }
-  });
-}
-
-
 
 function getRestaurantList() {
-
   return JSON.parse(localStorage.getItem("restaurants"));
 }
 
