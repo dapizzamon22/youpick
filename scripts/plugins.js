@@ -95,3 +95,17 @@ function getRandomX(){
   return Math.floor(Math.random() * $(window).width() - $(window).width() * 0.25);
 }
 /* END FALLING FOOD*/
+
+
+/*TRANSITIONS */
+var animations = ["spin3d"];
+function triggerAnimations(element){
+  for (i = 0; i < animations.length; i ++){
+    if (element.hasClass(animations[i])){
+      element.removeClass(animations[i]).addClass(animations[i]);
+    }
+  }
+  element.children(".animated").each(function(){
+    triggerAnimations()
+  });
+}

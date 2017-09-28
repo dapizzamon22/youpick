@@ -31,7 +31,7 @@ while(array_key_exists("next_page_token", $results)){
     }
     $token = $results->next_page_token;
     $url = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=$lat,$lng&pagetoken=$token&key=$apikey";
-    sleep(4);
+    sleep(2);
     $data = curlURL($url);
     $results = json_decode($data);
     if ($results != null && array_key_exists("results", $results)){

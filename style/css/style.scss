@@ -17,11 +17,11 @@ body {
   /* IE6-9 fallback on horizontal gradient */
 }
 
-.main-title{
+.main-title {
   font-family: 'Pacifico', cursive;
   color: white;
   font-size: 60px;
-  text-shadow: 2px 2px 0px black;
+  text-shadow: 2px 2px 0 black;
   animation-name: spin3d;
   animation-duration: 3s;
 }
@@ -64,7 +64,7 @@ body {
   }
 }
 
-.centered{
+.centered {
   text-align: center;
 }
 
@@ -127,8 +127,6 @@ body {
   animation-name: spinIn;
   animation-duration: 2s;
 }
-
-
 @keyframes spinIn {
   from {
     transform: rotate(270deg) scale(0.5,0.5);
@@ -137,22 +135,21 @@ body {
   }
 
   to {
-    transform: rotate(0deg)  scale(1,1);
+    transform: rotate(0deg) scale(1,1);
     transform-origin: 50% 50%;
-
   }
 }
 @keyframes spin3d {
-  from{
+  from {
     transform: rotate3d(1, 1, 1, 180deg);
   }
-  to{
+
+  to {
     transform: rotate3d(0, 0, 0, 0deg);
   }
 }
-
 /*Buttons */
-input[type="button"]{
+input[type="button"] {
   background: #ff9447;
   border: 1px solid grey;
   padding: 10px;
@@ -160,28 +157,171 @@ input[type="button"]{
   color: white;
 }
 /*END BUTTONS */
+#battle-field {
+  .battle {
+    display: none;
+    animation-name: spin3d;
 
-.battle{
-  width: 90%;
-  margin: 0 auto;
-  min-height:50vh;
-  .round-indicator{
-    text-align: center;
-  }
-  .versus{
-    display: inline-block;
-    text-align: center;
-    width: 30%;
-  }
-  #restaurant-a{
-    display: inline-block;
-    width: 30%;
-  }
-  #restaurant-b{
-    display: inline-block;
-    width: 30%;
+    &:nth-child(1) {
+      display: block;
+    }
   }
 }
-.prototype{
+
+.battle {
+  text-align: center;
+  width: 100%;
+  margin: 0 auto;
+  min-height: 50vh; /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#f2f6f8+0,d8e1e7+50,b5c6d0+51,e0eff9+100;Grey+Gloss+%232 */
+  background: #f2f6f8; /* Old browsers */
+  background: -moz-linear-gradient(-45deg, #f2f6f8 0%, #d8e1e7 50%, #b5c6d0 51%, #e0eff9 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(-45deg, #f2f6f8 0%,#d8e1e7 50%,#b5c6d0 51%,#e0eff9 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(135deg, #f2f6f8 0%,#d8e1e7 50%,#b5c6d0 51%,#e0eff9 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr= '#f2f6f8', endColorstr='#e0eff9',GradientType=1 );
+  /* IE6-9 fallback on horizontal gradient */
+  .round-indicator {
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: bolder;
+    font-family: 'Orbitron', sans-serif;
+  }
+
+  .versus {
+    display: inline-block;
+    text-align: center;
+    width: 30%;
+    text-transform: uppercase;
+    font-family: 'Permanent Marker', cursive;
+    font-size: 22px;
+    color: red;
+    font-shadow: 1px 1px 0 black;
+  }
+
+  .restaurant-tile {
+    padding: 10px;
+    box-shadow: 0 0 10px rgba(70,70,70,0.5);
+  }
+
+  #restaurant-a {
+    display: inline-block;
+    width: 30%; /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffb76b+0,ffa73d+50,ff7c00+51,ff7f04+100;Orange+Gloss */
+    background: #ffb76b; /* Old browsers */
+    background: -moz-linear-gradient(top, #ffb76b 0%, #ffa73d 50%, #ff7c00 51%, #ff7f04 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top, #ffb76b 0%,#ffa73d 50%,#ff7c00 51%,#ff7f04 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom, #ffb76b 0%,#ffa73d 50%,#ff7c00 51%,#ff7f04 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr= '#ffb76b', endColorstr='#ff7f04',GradientType=0 );
+    /* IE6-9 */
+  }
+
+  #restaurant-b {
+    display: inline-block;
+    width: 30%; /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#6db3f2+0,54a3ee+50,3690f0+51,1e69de+100;Blue+Gloss+%233 */
+    background: #6db3f2; /* Old browsers */
+    background: -moz-linear-gradient(top, #6db3f2 0%, #54a3ee 50%, #3690f0 51%, #1e69de 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top, #6db3f2 0%,#54a3ee 50%,#3690f0 51%,#1e69de 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom, #6db3f2 0%,#54a3ee 50%,#3690f0 51%,#1e69de 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr= '#6db3f2', endColorstr='#1e69de',GradientType=0 );
+    /* IE6-9 */
+  }
+}
+
+.corner-shadow
+{
+  position: relative;
+}
+.corner-shadow:before, .corner-shadow:after
+{
+  z-index: -1;
+  position: absolute;
+  content: "";
+  bottom: 15px;
+  left: 10px;
+  width: 50%;
+  top: 80%;
+  max-width:300px;
+  background: #777;
+  box-shadow: 0 15px 10px #777;
+  transform: rotate(-3deg);
+}
+.corner-shadow:after
+{
+  transform: rotate(3deg);
+  right: 10px;
+  left: auto;
+}
+
+.prototype {
   display: none;
+}
+/* ANIMATIONS */
+.spin3d {
+  animation: spin3d 1s linear;
+}
+
+.slideLeft {
+  animation: slideLeft 2s linear;
+}
+
+.slideRight {
+  animation: slideRight 2s linear;
+}
+.slideDown{
+  animation: slideDown 2s linear;
+}
+.flyIn{
+  animation: flyIn 1s;
+  animation-timing-function: ease-in;
+
+}
+/* END ANIMATIONS */
+@keyframes slideLeft {
+  from {
+    opacity: 0.01;
+    position: relative;
+    left: -100%;
+  }
+
+  to {
+    position: relative;
+    opacity: 1;
+    left: 0;
+  }
+}
+@keyframes slideRight {
+  from {
+    opacity: 0.01;
+    position: relative;
+    right: -100%;
+  }
+
+  to {
+    position: relative;
+    opacity: 1;
+    right: 0;
+  }
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0.01;
+    position: relative;
+    top: -100%;
+  }
+
+  to {
+    position: relative;
+    opacity: 1;
+    top: 0;
+  }
+}
+
+@keyframes flyIn {
+  from{
+    opacity: 0.01;
+    transform: scale(5);
+  }
+  to{
+    opacity: 1;
+    transform: scale(1);
+  }
 }

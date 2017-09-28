@@ -52,7 +52,7 @@ function killBattle(battleElem){
   if (nextBattle.length == 0){
     loadBattles();
   } else{
-    //nextBattle.fadeIn("slow");
+    triggerAnimations(nextBattle);
   }
 
 }
