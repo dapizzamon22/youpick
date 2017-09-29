@@ -22,7 +22,10 @@ if ($results->status != "OK"){
     return;
 }
 $restaurants = array();
-$restaurants = $results->results;
+$restResults = $results->results;
+foreach($restResults as $result){
+    $restaurants[] = $result->name;
+}
 
 while(array_key_exists("next_page_token", $results)){
     if ($results->status != "OK"){
@@ -35,14 +38,19 @@ while(array_key_exists("next_page_token", $results)){
     $data = curlURL($url);
     $results = json_decode($data);
     if ($results != null && array_key_exists("results", $results)){
-        //echo var_dump($results);
-        array_merge($restaurants, $results->results);
+        $restResults = $results->results;
+        foreach($restResults as $result){
+            $restaurants[] = $result->name;
+        }
     } else {
         break;
     }
 }
 
-echo json_encode($restaurants);
+
+#remove duplicates
+
+echo json_encode( array_unique( $restaurants ) );
 return;
 
 function curlURL($url){
