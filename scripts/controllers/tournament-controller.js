@@ -24,15 +24,15 @@ $(window).on("load", function() {
             radius: 20000,
             maxPrice: maxPrice
           }, function(restaurants) {
-            restaurants = JSON.parse(restaurants);
             console.log(restaurants);
+            restaurants = JSON.parse(restaurants);
             setRestaurantList(restaurants);
             clearInterval(loadingInterval);
             $('#fragment-holder').load("fragments/battle.html", function() {
               loadBattles();
             });
           });
-          
+
         }
       });
 

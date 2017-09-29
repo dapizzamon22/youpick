@@ -6,7 +6,7 @@ $(document).ready(function() {
     $('#settings').toggleClass("expanded");
   });
   $('#start-tournament').on("click", function() {
-    window.location.href = "tournament";
+    window.location.href = "tournament.html";
   });
 
   var settings = loadSettings();

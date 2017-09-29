@@ -13,8 +13,8 @@ $query['url'] = $url;
 
 $newURL = "http://loganchristensen.com/youpick/scripts/php/get-remote.php?" . http_build_query($query);
 $data = curlURL($newURL);
-
 $results = json_decode($data);
+
 if ($results->status != "OK"){
     echo $results->status;
     echo $results;
@@ -30,6 +30,7 @@ foreach($restResults as $result){
 while(array_key_exists("next_page_token", $results)){
     if ($results->status != "OK"){
         echo "ERROR Status not OK";
+        echo "\n\nResults: " . $results;
         return;
     }
     $token = $results->next_page_token;

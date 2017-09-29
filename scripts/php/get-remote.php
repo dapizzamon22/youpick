@@ -1,10 +1,8 @@
 <?php
-$url = $_POST['url'];
-$query = array();
-$query['url'] = $url;
+$url = $_GET['url'];
 
 $ch = curl_init();
-$fetcher = "http://loganchristensen.com/youpick/scripts/php/get-remote.php?" . http_build_query($query);
+$fetcher = $url;
 //Set the URL that you want to GET by using the CURLOPT_URL option.
 curl_setopt($ch, CURLOPT_URL, $fetcher);
 
